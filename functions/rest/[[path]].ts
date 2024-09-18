@@ -2,11 +2,11 @@ import { error } from 'itty-router-extras';
 
 export interface Env {
   BASE_URL: string
-  XK: KVNamespace
   PICX: R2Bucket
+  AUTH_TOKEN: string
 }
 
-export const onRequest: PagesFunction<Env> = async (context : EventContext) => {
+export const onRequest: PagesFunction<Env> = async (context: EventContext) => {
   const { router } = await import('./router').then(
     async (module) => (await import('./routes'), module)
   );
