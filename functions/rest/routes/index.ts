@@ -8,7 +8,7 @@ import type { R2ListOptions } from "@cloudflare/workers-types";
 const auth = async (request: Request, env: Env) => {
   const method = request.method;
   // console.log(method)
-  if (method == "GET" || method == "OPTIONS") {
+  if (method == "OPTIONS") {
     return
   }
   // get user token
